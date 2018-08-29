@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Bonuses 2</string>
+    <string name="title_stores">Магазины</string>
+    <string name="title_exchange">Биржа</string>
+    <string name="title_main">Главная</string>
+    <string name="title_card">Бонусная карта</string>
+    <string name="title_profile">Профиль</string>
+    <string name="title_activity_stores">StoresActivity</string>
+
+    <string name="title_stores_scan">Считать карту</string>
+    <string name="title_stores_main">Главная</string>
+    <string name="title_stores_profile">Настройки</string>
+
+    <string name="main_activity_bonuses">Мои бонусы</string>
+    <string name="main_activity_products">Мои покупки</string>
+
+    <string name="profile_activity_name">Фамилия Имя</string>
+    <string name="profile_activity_phone">Телефон</string>
+    <string name="profile_activity_balance">Баланс</string>
+    <string name="profile_activity_currency_unit">рублей</string>
+
+    <string name="stores_activity_stores">Выбрать магазин</string>
+    <string name="stores_activity_products">Список товаров</string>
+    <string name="stores_activity_cart">Перейти в корзину</string>
+
+    <string name="cart_activity_bonuses_message">Выберете количество бонусов, которые хотите потратить</string>
+    <string name="cart_activity_total_price">Общая стоимость:</string>
+    <string name="cart_activity_bonuses_available">Бонусов доступно</string>
+    <string name="cart_activity_buy">Купить</string>
+
+    <string name="exchange_activity_change">Обменять</string>
+    <string name="exchange_activity_bonuses">бонусов</string>
+    <string name="exchange_activity_store">магазина</string>
+    <string name="exchange_activity_store_2">на бонусы магазина</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">User id</string>
+    <string name="prompt_password">Phone number (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This user id is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed"</string>
+    <string name="login_activity_checkbox">Зарегистрироваться как магазин</string>
+    <string name="title_activity_store_main">StoreMainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="stores_scan_activity_text">Поднесите карту для считывания</string>
+    <string name="cart_activity_text">Предьявите этот qr-код на кассе</string>
+</resources>

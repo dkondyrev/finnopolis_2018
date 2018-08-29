@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".store.StoreMainActivity">
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/store_navigation" />
+
+    <TextView
+        android:id="@+id/store_name"
+        android:layout_width="104dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginLeft="78dp"
+        android:layout_marginRight="64dp"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="37dp"
+        android:text="Название"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="104dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="37dp"
+        android:text="Магазин"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="155dp"
+        android:layout_height="31dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="23dp"
+        android:text="Бонусов выдано"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+    <TextView
+        android:id="@+id/bonuses_number"
+        android:layout_width="57dp"
+        android:layout_height="34dp"
+        android:layout_marginLeft="101dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="22dp"
+        android:text="0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toEndOf="@+id/textView18"
+        app:layout_constraintTop_toBottomOf="@+id/products_number" />
+
+    <TextView
+        android:id="@+id/products_number"
+        android:layout_width="57dp"
+        android:layout_height="34dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="106dp"
+        android:text="0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/store_name" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="158dp"
+        android:layout_height="34dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="39dp"
+        android:text="Продано товаров"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="42dp"
+        android:text="Статистика"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="233dp"
+        android:layout_height="191dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginRight="75dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bonuses_number" />
+
+</android.support.constraint.ConstraintLayout>

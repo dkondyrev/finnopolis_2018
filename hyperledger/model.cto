@@ -1,0 +1,154 @@
+/*
+* Model definition of Decentury project
+*/
+
+namespace ru.nsk.decentury
+
+/**
+ * Abstract participant of system
+ */
+abstract participant User identified by id {
+  o String id
+  o Long balance
+}
+
+/**
+ * A Producer participant
+ */
+participant Producer extends User {
+    o String companyName
+}
+
+/**
+ * A Storage participant
+ */
+participant Storage extends User {
+    o String companyName
+}
+
+/**
+ * A Store participant
+ */
+participant Store extends User {
+    o String companyName
+    o Price[] priceList
+    o Double bonusCoefficient
+    o Double maxBonuses
+}
+
+
+concept TokenBalance {
+  --> Store store
+  o Integer tokenBalance
+}
+
+/**
+ * A Buyer participant
+ */
+participant Buyer extends User {
+  o TokenBalance[] wallet
+  o String phoneNumber
+}
+
+
+/**
+ * A Price concept
+ */
+concept Price {
+  o String vendorCode
+  o Long price
+}
+
+
+enum DealState {
+  o SENT
+  o RECIEVED
+}
+
+/**
+ * A Deal asset
+ */
+asset Deal identified by id {
+  o String id
+  --> User seller
+  --> User recipient
+  --> Product[] products
+  o Integer amount
+  o String vendorCode
+  o Long price
+
+  --> Request request
+  
+  o DealState state
+}
+
+enum ProductState {
+  o PRODUCED
+  o ON_THE_TO_THE_STORAGE
+  o IN_THE_STORAGE
+  o ON_THE_WAY_TO_THE_STORE
+  o IN_THE_STORE
+  o BOUGHT
+}
+asset Product identified by id {
+  o String id
+  o String name
+  o String vendorCode
+  --> User producer
+  --> User owner
+  o ProductState state
+  o DateTime[] Dates
+}
+
+enum RequestState {
+  o SENT
+  o REJECTED
+  o EXECUTED
+  o PARIALLY_EXECUTED
+}
+
+asset Guarantee identified by id {
+  o String id
+  --> Product product
+  --> User seller
+  o Long price
+}
+
+asset Request identified by id {
+  o String id
+  --> User seller
+  --> User recipient
+  o String vendorCode
+  o Long amount
+  o Long price
+  o DateTime termOfSupply
+  o RequestState state
+}
+
+transaction ResponseToRequest {
+  --> Request request
+  --> Product[] products
+}
+
+transaction ProductTransition {
+  --> Deal deal
+}
+
+transaction buyingGoodsInStore {
+  --> User store
+  --> User buyer
+  --> Product[] products
+  o Long bonus
+}
+
+transaction provideGuarantee {
+  --> User buyer
+  --> Guarantee guarantee
+}
+
+transaction BonusesExchange {
+  --> User buyer
+  --> Store fromStore
+  --> Store toStore
+  o Long bonusesAmount
+}

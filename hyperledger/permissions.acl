@@ -1,0 +1,33 @@
+// namespace ru.nsk.decentury
+
+/*Доступ владельца к собственным товарам*/
+rule R1 {
+  description: "Users can READ all their product"
+  participant(u): "ru.nsk.decentury.User"
+  operation: READ
+  resource(p): "ru.nsk.decentury.Product"
+  condition: (u.id == p.owner)
+  action: ALLOW
+}
+rule R2 {
+  description: "Only producers can CREATE products"
+  participant: "ru.nsk.decentury.Producer"
+  operation: CREATE
+  resource: "ru.nsk.decentury.Product"
+  action: ALLOW
+}
+rule R3 {
+  description: "Buyers cannot create requests"
+  participant: "ru.nsk.decentury.Buyer"
+  operation: ALL
+  resource: "ru.nsk.decentury.Request"
+  action: DENY 
+}
+rule R4 {
+  description: "Producer cannot create requests"
+  participant(p): "ru.nsk.decentury.Producer"
+  operation: READ
+  resource(r): "ru.nsk.decentury.Request"
+  condition: (p.id == r.recipient)
+  action: ALLOW
+  }
